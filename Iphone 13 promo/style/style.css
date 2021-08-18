@@ -1,0 +1,212 @@
+html {
+    box-sizing: border-box;
+}
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+}
+
+
+body{
+    min-width: 320px;
+    min-height: 100vh;
+
+    background-color: #ffffff;     /* указать фон под проект*/
+    font-family: "SF UI Text", sans-serif; /* указать шрифт под проект*/
+    font-size: 20px; /*самый используемый шрифт*/
+    font-weight: 500;
+    color: #000000; 
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+    margin: 0;
+}
+
+.container {
+    max-width: 1350px; /*к 1290 добовляем 60 тк падинг 30 с каждой стороны*/
+    margin: 0 auto;
+    padding: 0 30px; /*что бы контент не прижимался к краям*/
+}
+
+.main__section {
+    padding: 70px 0;
+}
+
+.header {
+    padding: 30px 0;
+}
+
+.header__container {
+    max-width: 1130px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    height: 40px;
+}
+
+.navigation {
+    font-weight: 400;
+}
+
+.navigation__list {
+    display: flex;
+    align-items: center;
+}
+
+.navigation__item {
+    display: flex;
+    align-items: center; 
+}
+
+.navigation__item:not(:last-child):after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background-color: #C4C4C4;
+    margin: 0 25px;
+}
+
+@media (max-width: 800px) {
+    .header__container {
+        align-items: flex-start; /*для подъема яблока при размере меньше 800*/
+    }
+    .navigation {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .navigation__list {
+        display: block;
+    }
+
+    .navigation__item {
+        justify-content: flex-end;
+    }
+
+    .navigation__item:not(:last-child):after {
+        display: none;
+    }
+}
+
+.btn {
+    cursor: pointer; /*появление курсора*/
+    padding: 18px 23px; /*отступ 18 сверху снизу, 23 справа и слева*/
+    background: #0071E3;
+    border-radius: 30px; /*ЗАКРУГЛЕНИЕ КНОПКИ*/
+    border: none; /*убираем линию вокруг*/
+    color: #ffffff; /*цвет текста*/
+}
+
+@media (max-width: 800px) {
+    .btn {
+        font-size: 18px;
+    }
+}
+
+.offer__container {
+    padding: 30px;
+    margin: 0 -30px;/*убираем полосы 30px на контенте, но не на тексте*/
+    min-height: 820px;
+    background-image: url(../image/phones.jpg);
+    background-repeat: no-repeat; /*убираем двоение картинки*/
+    background-position: bottom; /*прижимаем картинку к низу контейнера*/
+    background-size: 1290px;
+    display: flex; /*элементы по горизонтали*/
+    flex-direction: column;/*перевернули в колонну*/
+    align-items: center; /*выравнивание по середине (в нашем случае по горизонтале)*/
+}
+
+@media (min-resolution: 2dppx) {
+    .offer__container {
+        background-image: url(../image/phones-2x.jpg);/*для загрузки более крупной картинки, для ритины, вместо обычной, но нужно тогда еще выше
+        прописать бекграунд сайз 1290, что бы картинка не выходила за пределы контейнера*/
+    }
+}
+
+.offer__main-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 24px;/*растояние до следующего блока*/
+}
+
+.offer__title {
+    font-weight: 500;
+    text-align: center;/*сохраняет текст в центре*/
+    font-size: 34px;
+    line-height: 41px;
+    margin-bottom: 24px;
+}
+
+.offer__price {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 800px) {
+    .offer__container {
+        background-image: url(../image/phones-800.jpg);
+        background-size: 800px;
+        min-height: 720px;
+    }
+
+    @media (min-resolution: 2dppx) {
+        .offer__container {
+            background-image: url(../image/phones-800-2x.jpg);
+        }
+    }
+
+    .offer__main-title {
+        font-size: 18px;
+    }
+
+    .offer__title {
+        font-size: 26px;
+    }
+
+    .offer__price {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 440px) {
+    .offer__container {
+        background-image: url(../image/phones-mob.jpg);
+        background-size: 400px;
+    }
+
+    @media (min-resolution: 2dppx) {
+        .offer__container {
+            background-image: url(../image/phones-mob-2x.jpg);
